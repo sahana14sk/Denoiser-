@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: audio-denoiser-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python Task1.py
+    plan: free
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    autoDeploy: true
+    
+  - type: web
+    name: audio-denoiser-frontend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run frontend.py --server.port 10000 --server.address 0.0.0.0
+    plan: free
+    envVars:
+      - key: STREAMLIT_SERVER_HEADLESS
+        value: true
+    autoDeploy: true

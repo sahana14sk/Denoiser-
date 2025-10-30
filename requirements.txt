@@ -1,0 +1,6 @@
+flask
+pydub
+numpy
+noisereduce
+streamlit
+requests
