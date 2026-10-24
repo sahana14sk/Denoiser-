@@ -1,0 +1,1 @@
+print("Internship work")
